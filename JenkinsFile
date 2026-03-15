@@ -1,0 +1,33 @@
+pipeline {
+
+     agent any
+
+     stages {
+       
+        stage('checkout code') {
+	    steps {
+	        echo "cloning repo from github..."
+		checkout scm
+	    }
+	 }
+
+	 stage ('build'){
+	     steps {
+	     echo "Running the bash app..."
+	     sh 'bash app.sh'
+	     }
+	 }
+         
+	 stage ('test') {
+	     steps {
+	     echo "running test stage..."
+	     sh 'echo test passes successfully....' 
+	     }
+	 }
+     
+post {
+    success {
+        echo "pipeline completed succesfully"
+	}
+	}
+}
