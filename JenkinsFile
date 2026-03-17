@@ -13,6 +13,7 @@ pipeline {
 
 	 stage ('build'){
 	     steps {
+         echo "Build Number: ${BUILD_NUMBER}"
 	     echo "Running the bash app..."
 	     sh 'bash app.sh'
 	     }
@@ -21,7 +22,7 @@ pipeline {
 	 stage ('test') {
 	     steps {
 	     echo "running test stage..."
-	     sh 'echo test passes successfully....' 
+	     sh 'echo test passes successfully...'
 	     }
 	 }
      }
