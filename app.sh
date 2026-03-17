@@ -1,5 +1,6 @@
 #!bin/bash
-
+echo "======================================"
 echo "hello jenkins pipeline"
 echo "this script is running through jenkins"
-date
+echo "Built Time: $(date)"
+echo "======================================"
